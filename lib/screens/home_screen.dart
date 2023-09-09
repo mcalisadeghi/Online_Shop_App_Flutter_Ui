@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -7,24 +8,39 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
+      appBar: buildAppbar(),
+    );
+  }
+
+  AppBar buildAppbar() {
+    return AppBar(
+      backgroundColor: Colors.white,
+      elevation: 0,
+      leading: IconButton(
+        icon: SvgPicture.asset(
+          'assets/icons/cart.svg',
+        ),
+        onPressed: () {},
+      ),
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: SvgPicture.asset(
+            'assets/icons/search.svg',
+            colorFilter: const ColorFilter.mode(kTextColor, BlendMode.srcIn),
+          ),
+        ),
+        IconButton(
+          onPressed: () {},
           icon: SvgPicture.asset(
             'assets/icons/cart.svg',
+            colorFilter: const ColorFilter.mode(kTextColor, BlendMode.srcIn),
           ),
-          onPressed: () {},
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              'assets/icons/search.svg',
-            ),
-          ),
-        ],
-      ),
+        const SizedBox(
+          width: kDefaulfPadding / 2,
+        ),
+      ],
     );
   }
 }

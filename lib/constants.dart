@@ -6,4 +6,4 @@ const kTextColor = Color(
 const kTextLightClor = Color(
   0xFFACACAC,
 );
-const kefaultPaddin = 20.0;
+const kDefaulfPadding = 20.0;
