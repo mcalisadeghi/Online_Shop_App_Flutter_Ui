@@ -46,6 +46,7 @@ class DetailsBody extends StatelessWidget {
                   child: const Column(
                     children: [
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Column(
                             children: [
