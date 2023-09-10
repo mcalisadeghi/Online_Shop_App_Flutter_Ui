@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
 import 'package:flutter_application_1/models/product.dart';
+import 'package:flutter_application_1/screens/deatils/components/product_title_with_image.dart';
 // import 'package:flutter_application_1/constants.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 
@@ -38,32 +39,7 @@ class DetailsBody extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: kDefaulfPadding,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'arstocratic had bag',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      Text(
-                        product.title,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineMedium
-                            ?.copyWith(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                      ),
-                    ],
-                  ),
-                )
+                ProductTitleImage(product: product),
               ],
             ),
           ),
