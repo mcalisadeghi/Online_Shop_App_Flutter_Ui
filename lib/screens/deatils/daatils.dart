@@ -6,14 +6,19 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class DetailsSCreen extends StatelessWidget {
   final Product product;
-  const DetailsSCreen({super.key, required this.product});
+  const DetailsSCreen({
+    super.key,
+    required this.product,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: product.color,
       appBar: appBar(context),
-      body: DetailsBody(),
+      body: DetailsBody(
+        product: product,
+      ),
     );
   }
 
