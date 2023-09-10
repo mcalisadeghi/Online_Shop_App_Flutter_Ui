@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
 import 'package:flutter_application_1/models/product.dart';
-import 'package:flutter_application_1/screens/components/categories.dart';
 
 class Cardbiulder extends StatelessWidget {
   final Product product;
-  final Function press;
+  final VoidCallback press;
   const Cardbiulder({
     super.key,
     required this.product,
@@ -14,45 +13,48 @@ class Cardbiulder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Expanded(
-          child: Container(
-            padding: const EdgeInsets.all(
-              kDefaulfPadding,
-            ),
-            // height: 180,
-            // width: 160,
-            decoration: BoxDecoration(
-              color: product.color,
-              borderRadius: BorderRadius.circular(
-                16,
+    return GestureDetector(
+      onTap: press,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.all(
+                kDefaulfPadding,
+              ),
+              // height: 180,
+              // width: 160,
+              decoration: BoxDecoration(
+                color: product.color,
+                borderRadius: BorderRadius.circular(
+                  16,
+                ),
+              ),
+              child: Image.asset(
+                product.image,
               ),
             ),
-            child: Image.asset(
-              product.image,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: kDefaulfPadding / 4,
+            ),
+            child: Text(
+              product.title,
+              style: const TextStyle(
+                color: kTextColor,
+              ),
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: kDefaulfPadding / 4,
-          ),
-          child: Text(
-            product.title,
+          Text(
+            "\$${product.price}",
             style: const TextStyle(
-              color: kTextColor,
+              fontWeight: FontWeight.bold,
             ),
-          ),
-        ),
-        Text(
-          "\$${product.price}",
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }

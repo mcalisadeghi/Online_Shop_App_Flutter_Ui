@@ -23,7 +23,7 @@ class _CategoriesState extends State<Categories> {
         vertical: kDefaulfPadding,
       ),
       child: SizedBox(
-        height: 25,
+        height: 26,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,

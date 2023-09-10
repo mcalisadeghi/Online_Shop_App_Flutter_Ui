@@ -18,7 +18,7 @@ class BodyHomeScreen extends StatelessWidget {
             horizontal: kDefaulfPadding,
           ),
           child: Text(
-            'women',
+            'Women',
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
