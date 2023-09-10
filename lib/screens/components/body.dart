@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
+import 'package:flutter_application_1/models/product.dart';
 import 'package:flutter_application_1/screens/components/categories.dart';
+import 'package:flutter_application_1/screens/components/item_card.dart';
 
 class BodyHomeScreen extends StatelessWidget {
   const BodyHomeScreen({super.key});
@@ -21,7 +23,24 @@ class BodyHomeScreen extends StatelessWidget {
                 ),
           ),
         ),
-        Categories(),
+        const Categories(),
+        Expanded(
+            child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: kDefaulfPadding,
+          ),
+          child: GridView.builder(
+            itemCount: products.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 0.75,
+            ),
+            itemBuilder: (BuildContext context, int index) => Cardbiulder(
+              product: products[index],
+              press: null,
+            ),
+          ),
+        )),
       ],
     );
   }

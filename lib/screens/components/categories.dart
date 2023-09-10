@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class Categories extends StatefulWidget {
   const Categories({super.key});
