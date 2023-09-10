@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_application_1/screens/components/categories.dart';
 
 class BodyHomeScreen extends StatelessWidget {
   const BodyHomeScreen({super.key});
@@ -8,6 +8,7 @@ class BodyHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(
@@ -22,43 +23,6 @@ class BodyHomeScreen extends StatelessWidget {
         ),
         Categories(),
       ],
-    );
-  }
-}
-
-class Categories extends StatefulWidget {
-  const Categories({super.key});
-
-  @override
-  State<Categories> createState() => _CategoriesState();
-}
-
-class _CategoriesState extends State<Categories> {
-  List<String> categories = [
-    'hand bag',
-    'hand bag',
-    'hand bag',
-    'hand bag',
-  ];
-  int selectedIndex = 0;
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 25,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: categories.length,
-        itemBuilder: (context, index) => buildCategory(index),
-      ),
-    );
-  }
-
-  Widget buildCategory(int index) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text(
-        categories[index],
-      ),
     );
   }
 }
