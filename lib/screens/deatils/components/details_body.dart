@@ -22,7 +22,62 @@ class DetailsBody extends StatelessWidget {
             height: size.height,
             child: Stack(
               children: [
-                ColorDot(size: size),
+                Container(
+                  // height: 500,
+                  margin: EdgeInsets.only(
+                    top: size.height * 0.3,
+                  ),
+                  padding: EdgeInsets.only(
+                    top: size.height * 0.12,
+                    left: kDefaulfPadding,
+                    right: kDefaulfPadding,
+                  ),
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(
+                        24,
+                      ),
+                      topRight: Radius.circular(
+                        24,
+                      ),
+                    ),
+                  ),
+                  child: const Column(
+                    children: [
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                'Color',
+                              ),
+                              Row(
+                                children: [
+                                  ColorDot(
+                                    color: Color(
+                                      0xFF356C95,
+                                    ),
+                                  ),
+                                  ColorDot(
+                                    color: Color(
+                                      0xFF356C95,
+                                    ),
+                                  ),
+                                  ColorDot(
+                                    color: Color(
+                                      0xFF356C95,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
                 ProductTitleImage(product: product),
               ],
             ),
@@ -34,76 +89,34 @@ class DetailsBody extends StatelessWidget {
 }
 
 class ColorDot extends StatelessWidget {
+  final Color color;
+  final bool isSelected;
   const ColorDot({
     super.key,
-    required this.size,
+    required this.color,
+    this.isSelected = false,
   });
-
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 500,
-      margin: EdgeInsets.only(
-        top: size.height * 0.3,
+      margin: const EdgeInsets.only(
+        top: kDefaulfPadding / 4,
+        right: kDefaulfPadding / 2,
       ),
-      padding: EdgeInsets.only(
-        top: size.height * 0.12,
-        left: kDefaulfPadding,
-        right: kDefaulfPadding,
+      padding: const EdgeInsets.all(
+        2.5,
       ),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(
-            25,
-          ),
-          topRight: Radius.circular(
-            25,
-          ),
+      height: 24,
+      width: 24,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(color: color),
+      ),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: color,
         ),
-      ),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Column(
-                children: [
-                  const Text(
-                    'Color',
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(
-                      top: kDefaulfPadding / 4,
-                      right: kDefaulfPadding / 2,
-                    ),
-                    padding: const EdgeInsets.all(
-                      2.5,
-                    ),
-                    height: 24,
-                    width: 24,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: const Color(
-                          0xFF356C95,
-                        ),
-                      ),
-                    ),
-                    child: const DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Color(
-                          0xFF356C95,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
       ),
     );
   }
