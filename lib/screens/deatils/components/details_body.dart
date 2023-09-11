@@ -5,6 +5,7 @@ import 'package:flutter_application_1/screens/deatils/components/cart_counter.da
 import 'package:flutter_application_1/screens/deatils/components/color_and_size.dart';
 import 'package:flutter_application_1/screens/deatils/components/description.dart';
 import 'package:flutter_application_1/screens/deatils/components/product_title_with_image.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class DetailsBody extends StatelessWidget {
   final Product product;
@@ -46,9 +47,13 @@ class DetailsBody extends StatelessWidget {
                   ),
                   child: Column(
                     children: <Widget>[
-                      ColorAndSize(product: product),
-                      Description(product: product),
-                      const CartCounter(),
+                      ColorAndSize(
+                        product: product,
+                      ),
+                      Description(
+                        product: product,
+                      ),
+                      CounterWithFavBtn(),
                     ],
                   ),
                 ),
