@@ -35,7 +35,7 @@ class AddToCart extends StatelessWidget {
             ),
             child: IconButton(
               icon: SvgPicture.asset(
-                'assets/icons/add_tocart.svg',
+                'assets/icons/add_to_cart.svg',
                 colorFilter: ColorFilter.mode(
                   product.color,
                   BlendMode.srcIn,
