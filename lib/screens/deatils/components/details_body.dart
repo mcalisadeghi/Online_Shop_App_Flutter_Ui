@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
 import 'package:flutter_application_1/models/product.dart';
-import 'package:flutter_application_1/screens/deatils/components/cart_counter.dart';
+import 'package:flutter_application_1/screens/deatils/components/add_to_cart.dart';
 import 'package:flutter_application_1/screens/deatils/components/color_and_size.dart';
+import 'package:flutter_application_1/screens/deatils/components/counter_with_fav_btn.dart';
 import 'package:flutter_application_1/screens/deatils/components/description.dart';
 import 'package:flutter_application_1/screens/deatils/components/product_title_with_image.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class DetailsBody extends StatelessWidget {
   final Product product;
@@ -53,7 +53,8 @@ class DetailsBody extends StatelessWidget {
                       Description(
                         product: product,
                       ),
-                      CounterWithFavBtn(),
+                      const CounterWithFavBtn(),
+                      AddToCart(product: product),
                     ],
                   ),
                 ),
