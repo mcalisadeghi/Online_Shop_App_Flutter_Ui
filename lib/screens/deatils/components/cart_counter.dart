@@ -14,7 +14,7 @@ class _CartCounterState extends State<CartCounter> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
+      children: <Widget>[
         outlinedButton(
           icon: Icons.remove,
           press: () {

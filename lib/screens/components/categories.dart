@@ -27,7 +27,8 @@ class _CategoriesState extends State<Categories> {
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,
-          itemBuilder: (context, index) => buildCategory(index),
+          itemBuilder: (BuildContext context, int index) =>
+              buildCategory(index),
         ),
       ),
     );
@@ -46,7 +47,7 @@ class _CategoriesState extends State<Categories> {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: [
+          children: <Widget>[
             Text(
               categories[index],
               style: const TextStyle(

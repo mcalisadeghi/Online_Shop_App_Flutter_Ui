@@ -12,7 +12,7 @@ class BodyHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
-      children: [
+      children: <Widget>[
         Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: kDefaulfPadding,

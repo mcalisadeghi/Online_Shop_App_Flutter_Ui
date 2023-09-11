@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
         ),
         onPressed: () {},
       ),
-      actions: [
+      actions: <Widget>[
         IconButton(
           onPressed: () {},
           icon: SvgPicture.asset(

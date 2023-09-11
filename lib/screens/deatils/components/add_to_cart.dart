@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
 import 'package:flutter_application_1/models/product.dart';
-
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AddToCart extends StatelessWidget {
@@ -19,9 +18,9 @@ class AddToCart extends StatelessWidget {
         vertical: kDefaulfPadding,
       ),
       child: Row(
-        children: [
+        children: <Widget>[
           Container(
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               right: kDefaulfPadding,
             ),
             height: 50,
@@ -37,7 +36,10 @@ class AddToCart extends StatelessWidget {
             child: IconButton(
               icon: SvgPicture.asset(
                 'assets/icons/add_tocart.svg',
-                // colorFilter:product.color
+                colorFilter: ColorFilter.mode(
+                  product.color,
+                  BlendMode.srcIn,
+                ),
               ),
               onPressed: () {},
             ),
@@ -46,7 +48,7 @@ class AddToCart extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(
+                minimumSize: const Size(
                   double.infinity,
                   48,
                 ),
@@ -59,7 +61,7 @@ class AddToCart extends StatelessWidget {
               ),
               child: Text(
                 "Buy  Now".toUpperCase(),
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,

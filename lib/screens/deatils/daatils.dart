@@ -36,7 +36,7 @@ class DetailsSCreen extends StatelessWidget {
         ),
         onPressed: () => Navigator.pop(context),
       ),
-      actions: [
+      actions: <Widget>[
         IconButton(
           onPressed: () {},
           icon: SvgPicture.asset(

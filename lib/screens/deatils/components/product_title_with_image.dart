@@ -36,10 +36,10 @@ class ProductTitleImage extends StatelessWidget {
             height: kDefaulfPadding,
           ),
           Row(
-            children: [
+            children: <Widget>[
               RichText(
                 text: TextSpan(
-                  children: [
+                  children: <InlineSpan>[
                     const TextSpan(
                       text: 'Price\n',
                     ),
@@ -58,9 +58,12 @@ class ProductTitleImage extends StatelessWidget {
                 height: kDefaulfPadding,
               ),
               Expanded(
-                child: Image.asset(
-                  product.image,
-                  fit: BoxFit.fill,
+                child: Hero(
+                  tag: '${product.id}',
+                  child: Image.asset(
+                    product.image,
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
             ],

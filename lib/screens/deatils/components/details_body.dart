@@ -50,15 +50,26 @@ class DetailsBody extends StatelessWidget {
                       ColorAndSize(
                         product: product,
                       ),
+                      const SizedBox(
+                        height: kDefaulfPadding / 2,
+                      ),
                       Description(
                         product: product,
                       ),
+                      const SizedBox(
+                        height: kDefaulfPadding / 2,
+                      ),
                       const CounterWithFavBtn(),
+                      const SizedBox(
+                        height: kDefaulfPadding / 2,
+                      ),
                       AddToCart(product: product),
                     ],
                   ),
                 ),
-                ProductTitleImage(product: product),
+                ProductTitleImage(
+                  product: product,
+                ),
               ],
             ),
           ),
