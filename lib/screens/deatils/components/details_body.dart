@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
 import 'package:flutter_application_1/models/product.dart';
+import 'package:flutter_application_1/screens/deatils/components/cart_counter.dart';
 import 'package:flutter_application_1/screens/deatils/components/color_and_size.dart';
 import 'package:flutter_application_1/screens/deatils/components/description.dart';
 import 'package:flutter_application_1/screens/deatils/components/product_title_with_image.dart';
@@ -47,6 +48,7 @@ class DetailsBody extends StatelessWidget {
                     children: <Widget>[
                       ColorAndSize(product: product),
                       Description(product: product),
+                      const CartCounter(),
                     ],
                   ),
                 ),
